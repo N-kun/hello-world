@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main() {
+	char sex,sports,diet;
+	double fahigh, mohigh,high;
+	printf("请输入你父母的身高/m\n");
+	printf("father:");
+	scanf("%lf",&fahigh);
+	printf("mother:\n");
+	scanf("%lf",&mohigh);
+	getchar();
+	printf("你的性别：(F女/M男)\n");
+	scanf("%c",&sex);
+	sex=sex>'Z'?sex-('a'-'A'):sex;
+	getchar();
+	if(sex=='F')
+		high=(fahigh+mohigh)*0.54;
+	else
+		high=(fahigh+mohigh)*0.5;
+	printf("喜爱锻炼吗？（是Y/不是N）\n");
+	scanf("%c",&sports);
+	sports=sports>'Z'?sports-('a'-'A'):sports;
+	getchar();
+	if(sports=='Y')
+		high+=high*0.02;
+	printf("是否有良好的饮食习惯（是Y/不是N）\n");
+	scanf("%c",&diet);
+	diet=diet>'Z'?diet-('a'-'A'):diet;
+	if(diet=='Y')
+		high+=high*0.015;
+	printf("你的身高是：%lf",high);
+}
